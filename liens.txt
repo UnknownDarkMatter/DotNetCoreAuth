@@ -1,0 +1,9 @@
+JWT Authentication In ASP.NET Core
+https://www.freecodespot.com/blog/jwt-authentication-in-dotnet-core/
+
+
+
+JWT Authentication with Symmetric Encryption in ASP.NET Core
+https://eduardstefanescu.dev/2020/04/11/jwt-authentication-with-symmetric-encryption-in-asp-dotnet-core/
+https://github.com/StefanescuEduard/JwtAuthentication
+
