@@ -14,3 +14,5 @@
 /Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/.config
 /Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/bin/Debug/net5.0
 /Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/obj
+/Samples.IdentityServer4/Docker/bin/IdentityServer
+/Samples.IdentityServer4/Docker/bin/WebSite

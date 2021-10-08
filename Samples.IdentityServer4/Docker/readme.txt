@@ -24,7 +24,7 @@ docker port 992dbc87dcf8
 docker start 6d8c95d02c7b  
 docker container ls -a
 docker rm 093e9f4c7ef3     (rm container)
-docker exec 82302cfdd362 ls /home/IdentityServer
+docker exec 5817cf8add95 ls /home/IdentityServer
 docker  network ls
 docker network inspect d74a5ab6c485
 docker inspect 17886bc1a648 (container_name_or_id)
@@ -43,8 +43,19 @@ docker-compose down
 Unable to configure HTTPS endpoint. No server certificate was specified, and the default developer certificate could not be found or is out of date.
 
 
-
-
+##########################################################################################
+#				Gestion container
+##########################################################################################
+savoir la version de linux (Debian GNU/Linux 10 (buster))
+docker exec 5817cf8add95 cat /etc/os-release
+docker exec 5817cf8add95 apt install curl
+C:\sources\DotNetCoreAuth\Samples.IdentityServer4\Docker>docker exec 5817cf8add95 cat /etc/apt/sources.list
+	# deb http://snapshot.debian.org/archive/debian/20210927T000000Z buster main
+	deb http://deb.debian.org/debian buster main
+	# deb http://snapshot.debian.org/archive/debian-security/20210927T000000Z buster/updates main
+	deb http://security.debian.org/debian-security buster/updates main
+	# deb http://snapshot.debian.org/archive/debian/20210927T000000Z buster-updates main
+	deb http://deb.debian.org/debian buster-updates main
 
 	
 ######### DOC

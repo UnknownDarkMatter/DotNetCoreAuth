@@ -146,7 +146,7 @@ sous Windows il faut installer le certificat en double cliquant sur le crt
 REM ######## Code a executer pour créer les certificats et clefs en localhost ##############
 
 REM ######## Code a executer pour créer les certificats et clefs de docker ##############
-ouvrir un prompt DOS dans le répertoire de travail
+ouvrir un prompt DOS dans le répertoire C:\sources\DotNetCoreAuth\Samples.IdentityServer4\OpenSSL
 
 openssl req -new -x509 -sha256 -nodes -newkey rsa:2048 -config myidentityserver.docker.conf -out myidentityserver.docker.crt -keyout myidentityserver.docker.key
 openssl pkcs12 -export -inkey myidentityserver.docker.key -in myidentityserver.docker.crt -out ..\ProCodeGuide.Samples.IdentityServer4\token-jwt-secret.pfx -passin pass:token-jwt-secret -passout pass:token-jwt-secret
