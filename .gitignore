@@ -3,3 +3,14 @@
 ################################################################################
 
 /.vs
+/Samples.IdentityServer4/.vs/ProCodeGuide.Samples.IdentityServer4
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.Client/.config
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.Client/bin/Debug/net5.0
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.Client/obj
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.WebAPI/bin/Debug/net5.0
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.WebAPI/obj
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.WebAPI.Client/bin/Debug/net5.0
+/Samples.IdentityServer4/ProCodeGuide.IdServer4.WebAPI.Client/obj
+/Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/.config
+/Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/bin/Debug/net5.0
+/Samples.IdentityServer4/ProCodeGuide.Samples.IdentityServer4/obj
