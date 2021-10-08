@@ -1,0 +1,56 @@
+services:
+  identityServer:
+    image: mcr.microsoft.com/dotnet/aspnet:5.0
+    working_dir: /home/IdentityServer
+    hostname: myidentityserver
+    container_name: myidentityserver
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CLIENT_HOSTNAME : localhost
+      CLIENT_PORT: 5003
+      CLIENT_PROTOCOL: https
+    ports:
+      - 5000:5000
+      - 5001:5001
+    volumes:
+      - type: bind
+        source: ./bin/IdentityServer
+        target: /home/IdentityServer
+    entrypoint: |
+      /bin/bash -c "
+        cp /home/IdentityServer/myidentityserver.docker.crt /usr/local/share/ca-certificates
+        cp /home/IdentityServer/myidentityserver.docker.crt /etc/ssl/certs
+        update-ca-certificates
+        dotnet /home/IdentityServer/ProCodeGuide.Samples.IdentityServer4.dll
+      "
+
+  client:
+    image: mcr.microsoft.com/dotnet/aspnet:5.0
+    working_dir: /home/WebSite
+    hostname: mywebsite
+    container_name: mywebsite
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      IDENTITY_HOSTNAME: localhost
+      IDENTITY_PORT: 5001
+      IDENTITY_PROTOCOL: https
+    ports:
+      - 5002:5002
+      - 5003:5003
+    volumes:
+      - type: bind
+        source: ./bin/WebSite
+        target: /home/WebSite
+    entrypoint: |
+      /bin/bash -c "
+        cp /home/WebSite/mywebsite.docker.crt /usr/local/share/ca-certificates
+        cp /home/WebSite/mywebsite.docker.crt /etc/ssl/certs
+        update-ca-certificates
+        dotnet /home/WebSite/ProCodeGuide.IdServer4.Client.dll
+      "
+
+
+
+
+
+
