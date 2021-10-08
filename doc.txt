@@ -152,10 +152,12 @@ openssl req -new -x509 -sha256 -nodes -newkey rsa:2048 -config myidentityserver.
 openssl pkcs12 -export -inkey myidentityserver.docker.key -in myidentityserver.docker.crt -out ..\ProCodeGuide.Samples.IdentityServer4\token-jwt-secret.pfx -passin pass:token-jwt-secret -passout pass:token-jwt-secret
 openssl pkcs12 -export -inkey myidentityserver.docker.key -in myidentityserver.docker.crt -out ..\ProCodeGuide.Samples.IdentityServer4\token-jwt-secret-http2.pfx -passin pass:token-jwt-secret-http2 -passout pass:token-jwt-secret-http2
 xcopy /Y myidentityserver.docker.crt ..\ProCodeGuide.Samples.IdentityServer4\
+xcopy /Y myidentityserver.docker.crt ..\ProCodeGuide.IdServer4.Client\
 
 
 openssl req -new -x509 -sha256 -nodes -newkey rsa:2048 -config mywebsite.docker.conf -out mywebsite.docker.crt -keyout mywebsite.docker.key
 openssl pkcs12 -export -inkey mywebsite.docker.key -in mywebsite.docker.crt -out ..\ProCodeGuide.IdServer4.Client\token-jwt-secret-http2.pfx -passin pass:token-jwt-secret-http2 -passout pass:token-jwt-secret-http2
+xcopy /Y mywebsite.docker.crt ..\ProCodeGuide.Samples.IdentityServer4\
 xcopy /Y mywebsite.docker.crt ..\ProCodeGuide.IdServer4.Client\
 
 sous linux il faut copier le crt dans /usr/local/share/ca-certificates et lancer la commande update-ca-certificates
