@@ -9,7 +9,7 @@ services:
     container_name: myidentityserver
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      CLIENT_HOSTNAME : mywebsite
+      CLIENT_HOSTNAME : localhost
       CLIENT_PORT: 5003
       CLIENT_PROTOCOL: https
     ports:
