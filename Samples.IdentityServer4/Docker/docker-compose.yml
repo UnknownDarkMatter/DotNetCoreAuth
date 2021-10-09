@@ -21,8 +21,10 @@ services:
         target: /home/IdentityServer
     entrypoint: |
       /bin/bash -c "
-        cp /home/IdentityServer/myidentityserver.docker.crt /usr/local/share/ca-certificates
-        cp /home/IdentityServer/myidentityserver.docker.crt /etc/ssl/certs
+        cp /home/IdentityServer/myidentityserver.docker.crt /usr/share/ca-certificates
+        cp /home/IdentityServer/mywebsite.docker.crt /usr/share/ca-certificates
+        echo "myidentityserver.docker.crt" >> /etc/ca-certificates.conf
+        echo "mywebsite.docker.crt" >> /etc/ca-certificates.conf
         update-ca-certificates
         dotnet /home/IdentityServer/ProCodeGuide.Samples.IdentityServer4.dll
       "
@@ -49,8 +51,10 @@ services:
         target: /home/WebSite
     entrypoint: |
       /bin/bash -c "
-        cp /home/WebSite/mywebsite.docker.crt /usr/local/share/ca-certificates
-        cp /home/WebSite/mywebsite.docker.crt /etc/ssl/certs
+        cp /home/WebSite/myidentityserver.docker.crt /usr/share/ca-certificates
+        cp /home/WebSite/mywebsite.docker.crt /usr/share/ca-certificates
+        echo "myidentityserver.docker.crt" >> /etc/ca-certificates.conf
+        echo "mywebsite.docker.crt" >> /etc/ca-certificates.conf
         update-ca-certificates
         dotnet /home/WebSite/ProCodeGuide.IdServer4.Client.dll
       "
