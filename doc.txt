@@ -166,8 +166,24 @@ NET::ERR_CERT_AUTHORITY_INVALID : certificats avec CN=myidentityserver et mywebs
 NET::ERR_CERT_AUTHORITY_INVALID : certificats avec CN=myidentityserver et mywebsite ajoutés sous Windows dans autorité de certification racine
 REM ######## Code a executer pour créer les certificats et clefs de docker ##############
 
+####################################################################################################################
+#  Config Windows pour interroger les apps dockers
+####################################################################################################################
+ajouter les lignes suivantes dans C:\Windows\System32\drivers\etc\hosts
+
+#Docker containers
+127.0.0.1 myidentityserver
+127.0.0.1 mywebsite
 
 
 
-penser à changer le CN dans le fichier de config de sorte à mettre le hostname avant d'executer openssh pour générer le crt
+
+
+
+
+
+
+
+
+
 
