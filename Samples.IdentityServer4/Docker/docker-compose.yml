@@ -1,9 +1,9 @@
 services:
   identityServer:
     #ASP.NET Core, avec le runtime uniquement et les optimisations ASP.NET Core, Linux et Windows (multi-arch)
-    #image: mcr.microsoft.com/dotnet/aspnet:5.0
+    image: mcr.microsoft.com/dotnet/aspnet:5.0
     #.net 5, avec les kits de développement logiciel (sdk) inclus, sur Linux et Windows (multi-arch)
-    image: mcr.microsoft.com/dotnet/sdk:5.0
+    #image: mcr.microsoft.com/dotnet/sdk:5.0
     working_dir: /home/IdentityServer
     hostname: myidentityserver
     container_name: myidentityserver
@@ -22,18 +22,16 @@ services:
     entrypoint: |
       /bin/bash -c "
         cp /home/IdentityServer/myidentityserver.docker.crt /usr/share/ca-certificates
-        cp /home/IdentityServer/mywebsite.docker.crt /usr/share/ca-certificates
         echo "myidentityserver.docker.crt" >> /etc/ca-certificates.conf
-        echo "mywebsite.docker.crt" >> /etc/ca-certificates.conf
         update-ca-certificates
         dotnet /home/IdentityServer/ProCodeGuide.Samples.IdentityServer4.dll
       "
 
   client:
     #ASP.NET Core, avec le runtime uniquement et les optimisations ASP.NET Core, Linux et Windows (multi-arch)
-    #image: mcr.microsoft.com/dotnet/aspnet:5.0
+    image: mcr.microsoft.com/dotnet/aspnet:5.0
     #.net 5, avec les kits de développement logiciel (sdk) inclus, sur Linux et Windows (multi-arch)
-    image: mcr.microsoft.com/dotnet/sdk:5.0
+    #image: mcr.microsoft.com/dotnet/sdk:5.0
     working_dir: /home/WebSite
     hostname: mywebsite
     container_name: mywebsite
