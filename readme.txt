@@ -10,6 +10,10 @@ il existe deux configurations :
 Suivant la config il faut générer des certificats et des clés différentes car les noms de monaines ne sont pas les mêmes
 A la fin de ce fichier, de la doc diverse et des manips de gestion des certificats SSL qui ne fonctionnent qu'en localhost (incompatible avec containairisation Docker)
 
+Dans la solution Visual Studio on n'utilise que les projets suivants
+	- ProCodeGuide.IdServer4.Client
+	- ProCodeGuide.Samples.IdentityServer4
+
 ###########################################################################################
 #  application en localhost hebergée via Visual Studio sans utiliser Docker
 ###########################################################################################
@@ -57,9 +61,14 @@ openssl pkcs12 -export -inkey localhost.docker.key -in localhost.docker.crt -out
 openssl pkcs12 -export -inkey localhost.docker.key -in localhost.docker.crt -out ..\ProCodeGuide.Samples.IdentityServer4\token-jwt-secret-http2.pfx -passin pass:token-jwt-secret-http2 -passout pass:token-jwt-secret-http2
 openssl pkcs12 -export -inkey localhost.docker.key -in localhost.docker.crt -out ..\ProCodeGuide.IdServer4.Client\token-jwt-secret-http2.pfx -passin pass:token-jwt-secret-http2 -passout pass:token-jwt-secret-http2
 
-sous Windows il faut installer le certificat en double cliquant sur le crt, cliquer sur "installer un certificat" 
+sous Windows il faut installer le certificat en double cliquant sur le crt (localhost.docker.crt), cliquer sur "installer un certificat" 
 	puis choisir de l'installer sur l'ordinateur local puis choisir de l'installer dans le magasin "Autorités de certification racines de confiance"
 
+
+######## ouvrir l'application
+https://localhost:5003
+lancer soit la solution en debug dans Visual Studio
+soit lancer run-identityServer.bat et run-webSite.bat dans C:\sources\DotNetCoreAuth\Samples.IdentityServer4\Docker\bin
 
 ##### supprimer le certificat installé
 chercher l'utilitaire "Gerer des certificats d'ordinateur" en tappant "cert" dans les programmes
@@ -156,12 +165,19 @@ xcopy /Y mywebsite.docker.crt ..\ProCodeGuide.IdServer4.Client\
 
 pour info, cette manip est faite par le docker-compose, sous linux il faut copier le crt dans /usr/share/ca-certificates, ajouter le nom du certificat dans /etc/ca-certificates.conf et lancer la commande update-ca-certificates
 
+##### publier la solution pour mettre à jour C:\sources\DotNetCoreAuth\Samples.IdentityServer4\Docker\bin
+	- projet ProCodeGuide.IdServer4.Client
+	- projet ProCodeGuide.Samples.IdentityServer4
+
 
 ##### créer les certificats et clefs de docker
 sur l'ordinateur hôte Windows, ajouter les lignes suivantes dans C:\Windows\System32\drivers\etc\hosts
 
 #Docker containers
 127.0.0.1 myidentityserver
+
+######## ouvrir l'application
+https://localhost:5003
 
 
 ###########################################################################################
