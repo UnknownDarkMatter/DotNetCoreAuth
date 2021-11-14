@@ -24,7 +24,8 @@ docker port 992dbc87dcf8
 docker start 6d8c95d02c7b  
 docker container ls -a
 docker rm 093e9f4c7ef3     (rm container)
-docker exec 5817cf8add95 ls /home/IdentityServer
+docker exec 4496d6c1cc8e ls /home/IdentityServer
+docker exec 182b36f6c7f1 /opt/mssql-tools/bin/sqlcmd -l 30 -S localhost -U sa -P P@ssword1! -q "SELECT name FROM master.sys.databases "
 docker  network ls
 docker network inspect d74a5ab6c485
 docker inspect 17886bc1a648 (container_name_or_id)

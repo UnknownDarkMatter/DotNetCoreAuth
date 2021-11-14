@@ -26,6 +26,8 @@ services:
         update-ca-certificates
         dotnet /home/IdentityServer/ProCodeGuide.Samples.IdentityServer4.dll
       "
+    depends_on:
+      - identity-server-db
 
   client:
     #ASP.NET Core, avec le runtime uniquement et les optimisations ASP.NET Core, Linux et Windows (multi-arch)
@@ -57,8 +59,29 @@ services:
         dotnet /home/WebSite/ProCodeGuide.IdServer4.Client.dll
       "
 
-
-
+  identity-server-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: identity-server-db
+    environment:
+      SA_PASSWORD: P@ssword1!
+      ACCEPT_EULA: Y
+    ports:
+      - 1433:1433
+    volumes:
+      - type: bind
+        source: ./bin/IdentityServer
+        target: /home/IdentityServer
+    entrypoint: |
+        /bin/bash -c "
+            /home/IdentityServer/Migrations/Scripts/Update/identity-server-db-initialization.sh & /opt/mssql/bin/sqlservr
+        "
+    #entrypoint: |
+    #  /bin/bash -c "
+    #    /opt/mssql/bin/sqlservr
+    #    /opt/mssql-tools/bin/sqlcmd -l 30 -S localhost -U sa -P $${SA_PASSWORD} -i /home/IdentityServer/Migrations/Scripts/Update/20211113105032_CreateDatabase.sql
+    #  "
+    #entrypoint: sh
+    #command: -c '/opt/mssql/bin/sqlservr & /opt/mssql-tools/bin/sqlcmd -l 30 -S localhost -U sa -P $${SA_PASSWORD} -d tempdb -q "CREATE DATABASE $${DATABASE}"; wait'
 
 
 
