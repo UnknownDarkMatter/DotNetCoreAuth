@@ -73,7 +73,7 @@ services:
         target: /home/IdentityServer
     entrypoint: |
         /bin/bash -c "
-            /home/IdentityServer/Migrations/Scripts/Update/identity-server-db-initialization.sh & /opt/mssql/bin/sqlservr
+            /home/IdentityServer/Migrations/Scripts/Update/identity-server-db-initialization.sh P@ssword1! & /opt/mssql/bin/sqlservr
         "
     #entrypoint: |
     #  /bin/bash -c "
