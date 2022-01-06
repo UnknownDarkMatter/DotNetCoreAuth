@@ -1,0 +1,7 @@
+### Windows
+	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors
+	"C:\Users\sbonelli\AppData\Local\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors
+
+### mac os
+	/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests &> /dev/null
+
