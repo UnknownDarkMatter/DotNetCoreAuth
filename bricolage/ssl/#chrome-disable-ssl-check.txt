@@ -2,6 +2,15 @@
 	"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors
 	"C:\Users\sbonelli\AppData\Local\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors
 
+	dans le raccourci de l'app installée
+		mettre à la fin du raccourci  --ignore-certificate-errors
+
+	essai non réussi en modifiant la config de chrome
+		chrome://flags/#allow-insecure-localhost
+			ne corrige pas le probleme : Service worker registration failed with: DOMException: Failed to register a ServiceWorker for scope ('https://localhost:4200/') with script ('https://localhost:4200/ngsw-worker.js'): An SSL certificate error occurred when fetching the script.
+
 ### mac os
 	/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --ignore-urlfetcher-cert-requests &> /dev/null
+
+
 
