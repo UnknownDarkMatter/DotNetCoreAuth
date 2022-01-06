@@ -1,0 +1,31 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:33963",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "ProCodeGuide.IdServer4.Client2": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "IDENTITY_HOSTNAME": "localhost",
+        "IDENTITY_PORT": "5001",
+        "IDENTITY_PROTOCOL": "https",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "https://localhost:5004;http://localhost:5005"
+    }
+  }
+}

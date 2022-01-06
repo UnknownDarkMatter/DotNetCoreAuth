@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProCodeGuide.IdServer4.WebA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProCodeGuide.IdServer4.Client", "ProCodeGuide.IdServer4.Client\ProCodeGuide.IdServer4.Client.csproj", "{BD68F7CB-1307-4CA7-A303-7A08E27B8DA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProCodeGuide.IdServer4.WebAPI.Client", "ProCodeGuide.IdServer4.WebAPI.Client\ProCodeGuide.IdServer4.WebAPI.Client.csproj", "{2A41A6B2-F748-44E5-9E60-85D7A9C100FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProCodeGuide.IdServer4.WebAPI.Client", "ProCodeGuide.IdServer4.WebAPI.Client\ProCodeGuide.IdServer4.WebAPI.Client.csproj", "{2A41A6B2-F748-44E5-9E60-85D7A9C100FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProCodeGuide.IdServer4.Client2", "ProCodeGuide.IdServer4.Client2\ProCodeGuide.IdServer4.Client2.csproj", "{CA322DB1-0174-4C68-B83D-F7B7681566F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2A41A6B2-F748-44E5-9E60-85D7A9C100FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A41A6B2-F748-44E5-9E60-85D7A9C100FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A41A6B2-F748-44E5-9E60-85D7A9C100FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA322DB1-0174-4C68-B83D-F7B7681566F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA322DB1-0174-4C68-B83D-F7B7681566F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA322DB1-0174-4C68-B83D-F7B7681566F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA322DB1-0174-4C68-B83D-F7B7681566F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
